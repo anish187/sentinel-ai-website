@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070914">
+  <meta name="description" content="Sentinel AI — an educational online transaction fraud detection project.">
+  <title>Sentinel AI | Fraud Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="background-grid" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">S</span>
+      SENTINEL<span class="accent">.AI</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#technology">Technology</a>
+      <a href="#scanner">Fraud Scanner</a>
+    </nav>
+    <a class="nav-button" href="#scanner">Launch Scanner ↗</a>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="live-dot"></span> INTELLIGENT TRANSACTION SECURITY</div>
+        <h1>Detect the unseen.<br><span class="gradient-text">Protect what matters.</span></h1>
+        <p class="hero-description">
+          Explore machine learning for transaction fraud detection.
+          Analyze transaction patterns and identify activity that may
+          require a closer look.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary-button" href="#scanner">Analyze a transaction ↗</a>
+          <a class="button secondary-button" href="#technology">Explore the technology</a>
+        </div>
+        <div class="hero-footnote">AI APPLICATION LAB · EDUCATIONAL PROTOTYPE</div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="glow-orb"></div>
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="orbit orbit-c"></div>
+        <div class="shield">
+          <svg viewBox="0 0 120 140" fill="none" aria-hidden="true">
+            <path d="M60 5 L105 23 V61 C105 91 86 116 60 133 C34 116 15 91 15 61 V23 Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M60 20 L92 32 V61 C92 82 79 102 60 115 C41 102 28 82 28 61 V32 Z" fill="currentColor" opacity=".12"/>
+            <path d="M41 65 L54 78 L80 49" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="float-card card-one"><span class="live-dot"></span><div><strong>AI ENGINE</strong><small>Ready for analysis</small></div></div>
+        <div class="float-card card-two"><span class="card-icon">⌁</span><div><strong>RISK ANALYSIS</strong><small>Transaction screening</small></div></div>
+        <div class="art-caption">INTELLIGENCE IN EVERY TRANSACTION</div>
+      </div>
+      <a href="#technology" class="scroll-indicator"><span class="scroll-line"></span> SCROLL TO EXPLORE ↓</a>
+    </section>
+
+    <section class="technology section reveal" id="technology">
+      <article class="stat-card"><span class="stat-label">MODEL</span><h2>Random Forest</h2><p>A supervised machine-learning classifier</p></article>
+      <article class="stat-card"><span class="stat-label">INPUTS</span><h2>06 Features</h2><p>Transaction and account characteristics</p></article>
+      <article class="stat-card"><span class="stat-label">PURPOSE</span><h2>Risk Screening</h2><p>An educational fraud detection prototype</p></article>
+    </section>
+
+    <section class="intro-section section">
+      <div class="intro-copy reveal">
+        <div class="eyebrow">BEYOND THE TRANSACTION</div>
+        <h2>Patterns tell a story.<br><span class="gradient-text">AI helps explore it.</span></h2>
+        <p>Transaction amount alone cannot explain suspicious activity. Device changes, transaction timing, failed attempts, and account age can provide additional signals for a machine-learning model.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal"><span class="feature-number">01 / SIGNAL</span><div class="feature-symbol">⌁</div><h3>Transaction patterns</h3><p>Examine amount and transaction hour as model inputs.</p></article>
+        <article class="feature-card reveal"><span class="feature-number">02 / CONTEXT</span><div class="feature-symbol">◈</div><h3>Account context</h3><p>Consider device status, location context, and account history.</p></article>
+        <article class="feature-card reveal"><span class="feature-number">03 / MODEL</span><div class="feature-symbol">⌘</div><h3>Machine learning</h3><p>Use a trained classifier to estimate a transaction's risk.</p></article>
+      </div>
+    </section>
+
+    <section class="scanner-section section" id="scanner">
+      <div class="section-heading reveal">
+        <div class="eyebrow"><span class="live-dot"></span> INTERACTIVE LAB</div>
+        <h2>Run a transaction<br><span class="gradient-text">risk analysis.</span></h2>
+        <p>Enter sample transaction details to test the scanner interface. We'll connect it to the Python model in a later step.</p>
+      </div>
+
+      <div class="scanner-panel reveal">
+        <div class="scanner-header">
+          <div><span class="panel-label">SENTINEL / ANALYSIS TERMINAL</span><h3>Transaction scanner</h3></div>
+          <span class="demo-tag">INTERFACE DEMO</span>
+        </div>
+        <form id="fraud-form">
+          <div class="form-grid">
+            <label class="field"><span>Transaction amount</span><input type="number" name="transaction_amount" min="0" step="0.01" value="500" required></label>
+            <label class="field"><span>Transaction hour (0–23)</span><input type="number" name="transaction_hour" min="0" max="23" step="1" value="14" required></label>
+            <label class="field"><span>New device?</span><select name="new_device"><option value="0">No</option><option value="1">Yes</option></select></label>
+            <label class="field"><span>International transaction?</span><select name="international_transaction"><option value="0">No</option><option value="1">Yes</option></select></label>
+            <label class="field"><span>Failed attempts</span><input type="number" name="failed_attempts" min="0" step="1" value="0" required></label>
+            <label class="field"><span>Account age (days)</span><input type="number" name="account_age_days" min="0" step="1" value="365" required></label>
+          </div>
+          <button type="submit" class="button primary-button scan-button">Test scanner interface ↗</button>
+        </form>
+        <div class="result-box" id="result" aria-live="polite" hidden>
+          <span class="panel-label">INTERFACE TEST</span>
+          <h3 id="result-title">Ready</h3>
+          <p id="result-description"></p>
+          <p id="result-score"></p>
+        </div>
+        <p class="disclaimer">Educational prototype only. This interface does not yet make an AI prediction. Never use it to approve or reject real payments.</p>
+      </div>
+    </section>
+
+    <section class="closing-section section reveal">
+      <div class="eyebrow">EXPLORE THE POSSIBILITIES OF AI</div>
+      <h2>Build with intelligence.<br><span class="gradient-text">Design for trust.</span></h2>
+      <a href="#home" class="button secondary-button">Back to top ↑</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-mark">S</span>SENTINEL<span class="accent">.AI</span></a>
+    <p>Online Fraud Detection · AI Application Lab</p>
+    <span>EDUCATIONAL PROJECT · 2026</span>
+  </footer>
+</body>
+</html>
