@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "fraud_model.joblib"
+MODEL_PATH = BASE_DIR / "fraud_model_candidate_compressed.joblib"
 FRONTEND_DIR = BASE_DIR / "frontend"
 
 app = FastAPI(
